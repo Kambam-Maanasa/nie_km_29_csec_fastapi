@@ -1,0 +1,97 @@
+FAST API BASED APPLICATION DEVELOPMENT WORKSHOP
+̦
+FrontEnd -> BackEnd -> Database
+(React)    (FastAPI)     (Mongo DB)
+JS         Python         BSON doc = JSON + LOB
+
+UI Logic        Business Logic - Persistent Store
+
+There are two data base sources - 
+
+  1. SQL (RDBMS) : 
+         database - table row
+         Nested data will be in many tables using the relationship foreign key
+
+  2. No SQL - No only SQL - Mongo DB(document based no sql) : 
+         database - collection of documents 
+         Document - hierarchical ie nested
+
+Installed Mongo DB Server - CE 
+      - Setup Mongo Shell to work with mongo DB
+
+what is mongo shell?
+      client tool ie CLI to connect and work with mongo DB
+
+To list databases:
+$ show dbs 
+$ show databases
+
+To create database if does not exist :
+To select database if exist:
+$ use student_app_db
+
+To add the 'student' document to students collection:
+$ db.students.insertOne({name:"Maanasa",age:18,course:"CSE",year:2})
+
+To list students documents:
+$ use db.students.find()
+$ db.students.insertOne({name:"Sameera",age:18,course:"ISE",year:2})
+$ db.students.find()
+$ db.students.insertMany([
+    {name:"Kunal",age:20,course:"CSE",year:2},
+    {name:"Manoj",age:20,course:"CSE",year:2}
+])
+
+To query document by id:
+$ db.students.findOne({_id: ObjectId('6ab0dbc91b4fbdaa42680aff')})
+
+To filter/query by name:
+$ db.students.findOne({name : "Maanasa"})
+
+To filter by course "CSE":
+$ db.students.find({course: "CSE"})
+
+To filter by course "ISE":
+$ db.students.find({course: "ISE"})
+
+To update Kunal age as 21:
+$ db.students.updateOne({name:"Kunal"},{$set:{age:21}})
+
+To delete Mahesh after adding to students collection:
+$ db.students.insertOne({name:"Mahesh",age:47,course:"CSE",year:2})
+$ db.students.find()
+$ db.students.deleteOne({name: "Mahesh"})
+
+To list the collections:
+$ show collections
+
+......
+
+Afternoon Session :
+  Setup the mongo server, mongo shell.
+  Experimented CRUD ops with mongo db on students data.
+
+  tickets : title,description,category,status #,assigned_to,resolved_by
+  Employee Janaki raising the compliant to the service team 'My Laptop is not on'.
+  Team Leader Khushi assigns the ticket raised by Janaki Support Engineer Ganavi.
+  Admin will create Janaki,Khushi, and Ganavi users.
+
+1. Create mongo database 'it_service_desk_db'
+use it_service_desk_db
+2. Add four users Admin,Janaki,Khushi and Ganavi.
+db.users.insertMany([
+    {username: "Admin",password: "admin123",role: "admin"},
+    {username: "Janaki",password: "janaki123",role: "employee"},
+    {username: "Khushi",password: "khushi123",role: "team_lead"},
+    {username: "Ganavi",password: "ganavi123",role: "support_eng"},
+])
+db.users.find()
+3. Janaki will create the ticket.
+db.tickets.insertOne({title:'laptop is not on',description: 'the power button is not working',category: 'Hardware',status:'NEW'})
+db.tickets.find()
+4. Team leader Khushi assigns the ticket to Ganavi.
+db.tickets.updateOne({_id:ObjectId("6ab0f8891b4fbdaa42680b05")},{$set:{status:"ASSIGNED"}})
+db.tickets.find()
+5. Ganavi will update the issue resolution status.
+db.tickets.updateOne({_id:ObjectId("6ab0f8891b4fbdaa42680b05")},{$set:{status:"RESOLVED"}})
+db.tickets.find()
