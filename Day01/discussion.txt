@@ -95,3 +95,24 @@ db.tickets.find()
 5. Ganavi will update the issue resolution status.
 db.tickets.updateOne({_id:ObjectId("6ab0f8891b4fbdaa42680b05")},{$set:{status:"RESOLVED"}})
 db.tickets.find()
+
+Hospital support request system:
+
+1.use hospital_support_db
+2.db.users.insertMany([
+  {username: "Admin",password: "admin123",role: "admin"},
+  {username: "Maanasa",password: "maanasa123",role: "depart_staff"},
+  {username: "Varsha",password: "varsha123",role: "team_lead"},
+  {username: "Kamala",password: "kamala123",role: "support_eng"}
+])
+db.users.find()
+3.db.serviceRequests.insertOne({title:'Equipment issue',category: 'hardware',status: "NEW"})
+db.serviceRequests.find() //depart_staff
+4.db.serviceRequests.updateOne({_id:ObjectId("6ab106801b4fbdaa42680b0d")},{$set:{status:"ASSIGNED"}})
+db.serviceRequests.find() //team_lead
+5.db.serviceRequests.updateOne({_id:ObjectId("6ab106801b4fbdaa42680b0d")},{$set:{status:"IN-PROGRESS"}})
+db.serviceRequests.find() //support_eng
+6.db.serviceRequests.updateOne({_id:ObjectId("6ab106801b4fbdaa42680b0d")},{$set:{status:"RESOLVED"}})
+db.serviceRequests.find() //support_eng
+7.db.serviceRequests.updateOne({_id:ObjectId("6ab106801b4fbdaa42680b0d")},{$set:{status:"CLOSED"}})
+db.serviceRequests.find() //support_eng
