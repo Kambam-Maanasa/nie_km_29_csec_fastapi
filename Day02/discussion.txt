@@ -27,11 +27,11 @@ RESTAPI
 http methods are called verbs.
 url is called noun.
 
-POST /users
-GET /users
+POST /users - Create
+GET /users  - Read
 GET /users/101
-PUT /users/101
-DELETE /users/101
+PUT /users/101 - Update (add number in link)
+DELETE /users/101 - Delete (add number in link)
 
 Right click on the file -> Open as integrated terminal -> uvicorn filename:app --reload
 http://127.0.0.1:8000
@@ -39,3 +39,4 @@ if added any other decorator with endpoint
 http://127.0.0.1:8000/endpoint
 Shows the decorators 
 http://127.0.0.1:8000/docs
+
