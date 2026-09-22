@@ -1,0 +1,41 @@
+Fast API - Python
+
+What is FastAPI?
+   FastAPI is a modern Python web framework used to build APIs quickly
+
+REST API - standard for APIs (web services) dev 
+
+Python : Django, Flask
+
+Python has asyncio
+NodeJS has libuv -> event loop
+
+Starlette uvloop sits on libuv
+
+FastAPI : starlette (web development framework), pydantic (data validation and serialization) 
+    -ASGI (Asynchronous server gateway interface) based web dev framework 
+
+uvicorn runs the FastAPI (starlette) app 
+
+--------------------------
+
+Prerequisites : Python, Python packages fastapi, uvicorn
+
+RESTAPI 
+    http method + url end point = API End point
+
+http methods are called verbs.
+url is called noun.
+
+POST /users
+GET /users
+GET /users/101
+PUT /users/101
+DELETE /users/101
+
+Right click on the file -> Open as integrated terminal -> uvicorn filename:app --reload
+http://127.0.0.1:8000
+if added any other decorator with endpoint 
+http://127.0.0.1:8000/endpoint
+Shows the decorators 
+http://127.0.0.1:8000/docs
