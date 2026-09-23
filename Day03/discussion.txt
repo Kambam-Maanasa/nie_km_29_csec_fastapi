@@ -26,3 +26,44 @@ test> show dbs
 test> use service_ticket_db
 service_ticket_db> show collections
 service_ticket_db> db.tickets.find()
+
+SECURED APP 
+  authentication (authN) who is the user
+  authorization (authZ) what is role / privilages of the user
+
+  jwt (js web token) - token
+
+tool : draw.io -> https://app.diagram.net/
+
+token bases resources / APIs
+     - create (1,2,3), read all/search(1,2,3,4),
+       read by id(1,2,3,4), update(3,2,1),
+       delete(4)
+      
+    - Admin 4 | TL 3 | SE 2 | Employee 1
+
+token less resources / APIs
+   - login
+   - user creation
+
+pip install pyjwt pwdlib
+pip install "pwdlib[argon2]"
+pip install python-multipart
+
+Higher order function - A function takes function as a argument and / or returns a function.
+
+require roles is a higher order function which has return value which is check role
+   - check_role has arg current_user whose value is supplied by FastAPI using DI "get_current_user"
+   
+   - "get_current_user" takes token as arg which supplied by FastAPI using DI oauth2_scheme
+
+APIs : 
+   user 
+      POST /users
+      POST /login
+   ticket 
+      POST /tickets
+      GET /tickets
+      GET /tickets{id}
+      PUT /tickets{id}
+      DELETE /tickets{id}
