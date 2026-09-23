@@ -1,0 +1,8 @@
+Today's Agenda :
+    crud operations on mongo
+    secured app
+
+    - backend app (server) business logics
+    - frontend app (client) ui logics
+
+    - docker compose to run three apps - orchestration
