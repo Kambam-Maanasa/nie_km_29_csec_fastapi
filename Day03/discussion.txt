@@ -6,3 +6,23 @@ Today's Agenda :
     - frontend app (client) ui logics
 
     - docker compose to run three apps - orchestration
+
+CRUD OPERATIONS ON MONGO
+1. create 3 tickets
+    "laptop is not on"
+       check is it created
+    "web cam is not working"
+       check is it created
+    "os - file system not working"
+       check is it created
+2. read first ticket by id
+3. update first ticket status as "ASSIGNED"
+     check it is updated using "get all"
+4. delete third ticket
+     check it is updated using "get all"
+
+IN mongosh:
+test> show dbs
+test> use service_ticket_db
+service_ticket_db> show collections
+service_ticket_db> db.tickets.find()
