@@ -13,7 +13,7 @@ NodeJS has libuv -> event loop
 Starlette uvloop sits on libuv
 
 FastAPI : starlette (web development framework), pydantic (data validation and serialization) 
-    -ASGI (Asynchronous server gateway interface) based web dev framework 
+    -ASGI (Asynchronous server gateway interface) based web dev framework,authomatic autherization and documentation
 
 uvicorn runs the FastAPI (starlette) app 
 
