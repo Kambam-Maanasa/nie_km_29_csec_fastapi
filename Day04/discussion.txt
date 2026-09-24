@@ -1,0 +1,111 @@
+"Secured App" -> Protected Ticket APIs
+    Create the below users:
+        1. admin, 123, 4
+        2. employee, 123, 1
+        3. lead, 123, 3
+        4. support engineer, 123, 2
+    In swagger -> Authorize -> username | password
+        admin, 123
+    Then try the Ticket APIs
+        Create, Read all, Read by id, update, delete
+    Switch the login to employee
+        raise ticket
+    Switch the login to lead
+        assign ticket
+    Switch the login to employee
+        resolve ticket
+
+FRONTEND DEVELOPMENT :
+
+    frontend(React JS)
+    prerequisites - HTML 5 / CSS 3 / JS 
+
+    what is HTML? [musila document]
+       - Language to define content of web doc/page 
+       - P, H1.....H6, TABLE, UL, QL, DL etc. 
+
+    what is CSS?
+       - to make the html doc content as look and feel
+
+    Styles categories:
+       font, text, border, padding, margin, color, backgroung, etc.
+
+    To validate the html forms -> js
+    SPA - Single Page Application - framework
+        - to make web page as app
+        ex : React JS, Angular, Vue JS 
+
+    React JS - 
+        JSX : JavaScript + XML (HTML)
+
+    Node JS based frontend framework
+    Node JS based UI framework
+
+    vite template / starter
+    search "vite"
+      - npm create vite@latest my-vue-app -- --template vue
+      - npm create vite@latest calc_app -- --template react
+
+> kmaanasa@1.0.0 npx
+> 'create-vite' calc_app --template react
+
+│
+◇  Which linter to use?
+│  ESLint
+│
+◇  Install with npm and start now?
+│  No
+│
+◇  Scaffolding project in /Users/kmaanasa/Documents/GitHub/nie_km_29_csec_fastapi/Day04/frontend/calc_app...
+│
+└  Done. Now run:
+
+  cd calc_app
+  npm install
+  npm run dev (to start vite project)
+
+  To open app in vs code using command in command prompt - code .
+  npm init - create package.json
+  main.jsx - entry point for Application
+
+  Steps the react app is running in the browser?
+
+  How react will work with the single page?
+  1.React will take the snapshot of the single page i.e, DOM 
+     - it is virtual DOM 
+     - react holds the virtual DOM 
+     - react will update vDOM and algorithm diff checks the vDOM and DOM if any changes will be updated to DOM.
+
+
+  When we give the url of the react app server:
+  1. The index.html will be loaded first
+  2.main.jsx will be loaded for index.html
+     - entry point for react app
+
+===========================================================
+1. npm create vite@latest calc_app
+2. Select React
+3. Select JS
+4. Select ESLint
+5. to start? Select Yes
+     - Then server will be running.
+     - Copy the URL to browser and see the start app is running
+     - Stop the server using ctrl + c 
+6. cd calc_app 
+7. $ code . 
+     - It will open the project in vs code
+============================================================
+what is react component?
+component = ui + ui logic
+
+To complete the square calculator :
+Number : [    2    ]
+<Calculator>
+Square is 4
+
+const [num, setNum] = useState(0);
+
+Here useState is the hook to define the "npm" state.
+num has init value zero.
+
+useState function returns array of two elements
