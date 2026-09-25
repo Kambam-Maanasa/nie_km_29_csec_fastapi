@@ -1,0 +1,17 @@
+Setting up the working directory:
+
+C:\nie_work
+   --> apps\tickets_app\
+      --> server\main.py
+      --> client\ it is the vite project directory
+
+Demo of the app (full stack)
+Run Server : uvicorn filename:app --reload
+Run client : npm run dev
+
+code Implementation:
+Service
+    src/aps.js
+Components
+    src/Register.jsx
+
