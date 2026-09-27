@@ -1,9 +1,686 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fa;
-}
+/* =====================================================
+   GLOBAL
+===================================================== */
 
 * {
     box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #e0f2fe,
+        #f0fdf4,
+        #fdf4ff
+    );
+    color: #1e293b;
+}
+
+
+/* =====================================================
+   MAIN APP
+===================================================== */
+
+.app {
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+    background: linear-gradient(
+        135deg,
+        #0f766e,
+        #0891b2,
+        #2563eb
+    );
+
+    color: white;
+
+    padding: 20px 35px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    margin: 0;
+
+    font-size: 25px;
+}
+
+header div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+header span {
+    background: rgba(255, 255, 255, 0.2);
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   HEADER BUTTON
+===================================================== */
+
+header button {
+    background: #ef4444;
+
+    color: white;
+
+    border: none;
+
+    padding: 9px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+header button:hover {
+    background: #dc2626;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main {
+    width: 95%;
+
+    max-width: 1500px;
+
+    margin: 30px auto;
+}
+
+
+/* =====================================================
+   LOGIN / REGISTER
+===================================================== */
+
+.form-container {
+    width: 400px;
+
+    max-width: 90%;
+
+    margin: 70px auto;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px rgba(37, 99, 235, 0.15);
+
+    border-top: 6px solid #0891b2;
+}
+
+.form-container h1 {
+    text-align: center;
+
+    color: #0f766e;
+
+    margin-bottom: 10px;
+}
+
+.form-container h2 {
+    text-align: center;
+
+    color: #2563eb;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   FORM LABELS
+===================================================== */
+
+.form-container label,
+.request-form label {
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 6px;
+
+    font-weight: bold;
+
+    color: #334155;
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.form-container input,
+.form-container select,
+
+.request-form input,
+.request-form select,
+.request-form textarea {
+
+    width: 100%;
+
+    padding: 11px 13px;
+
+    border: 2px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    background: #f8fafc;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+
+.form-container input:focus,
+.form-container select:focus,
+
+.request-form input:focus,
+.request-form select:focus,
+.request-form textarea:focus {
+
+    border-color: #0891b2;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(8, 145, 178, 0.12);
+}
+
+
+/* =====================================================
+   LOGIN / REGISTER BUTTON
+===================================================== */
+
+.form-container button {
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #0891b2
+    );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.form-container button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(37, 99, 235, 0.25);
+}
+
+.form-container p {
+
+    text-align: center;
+
+    color: #64748b;
+
+    margin-top: 20px;
+}
+
+
+/* =====================================================
+   REQUEST FORM
+===================================================== */
+
+.request-form {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 35px rgba(15, 118, 110, 0.12);
+
+    border-left: 6px solid #0f766e;
+
+    margin-bottom: 30px;
+}
+
+.request-form h2 {
+
+    margin-top: 0;
+
+    color: #0f766e;
+
+    font-size: 22px;
+}
+
+
+/* =====================================================
+   REQUEST FORM TEXTAREA
+===================================================== */
+
+.request-form textarea {
+
+    min-height: 100px;
+
+    resize: vertical;
+
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.request-form button {
+
+    margin-top: 22px;
+
+    padding: 12px 22px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: linear-gradient(
+        135deg,
+        #16a34a,
+        #0f766e
+    );
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.request-form button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(22, 163, 74, 0.25);
+}
+
+.request-form button:disabled {
+
+    background: #94a3b8;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =====================================================
+   HORIZONTAL LINE
+===================================================== */
+
+hr {
+
+    border: none;
+
+    height: 2px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #bae6fd,
+        transparent
+    );
+
+    margin: 30px 0;
+}
+
+
+/* =====================================================
+   REQUEST LIST CONTAINER
+===================================================== */
+
+.container {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 35px rgba(37, 99, 235, 0.10);
+
+    overflow: hidden;
+}
+
+.container h2 {
+
+    margin-top: 0;
+
+    color: #2563eb;
+}
+
+
+/* =====================================================
+   TABLE CONTAINER
+===================================================== */
+
+.table-container {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    border-radius: 12px;
+
+    border: 1px solid #dbeafe;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 1200px;
+
+    background: white;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+thead {
+
+    background: linear-gradient(
+        135deg,
+        #0f766e,
+        #2563eb
+    );
+
+    color: white;
+}
+
+th {
+
+    padding: 14px 12px;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
+td {
+
+    padding: 12px;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    font-size: 13px;
+
+    vertical-align: middle;
+}
+
+
+tbody tr {
+
+    transition: 0.2s;
+}
+
+
+tbody tr:nth-child(even) {
+
+    background: #f8fafc;
+}
+
+
+tbody tr:hover {
+
+    background: #ecfeff;
+
+    box-shadow:
+        inset 4px 0 0 #06b6d4;
+}
+
+
+/* =====================================================
+   TABLE INPUTS
+===================================================== */
+
+td input,
+td select,
+td textarea {
+
+    width: 100%;
+
+    min-width: 110px;
+
+    padding: 7px 8px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 6px;
+
+    background: white;
+
+    outline: none;
+}
+
+
+td textarea {
+
+    min-height: 70px;
+
+    resize: vertical;
+}
+
+
+td input:focus,
+td select:focus,
+td textarea:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+
+/* =====================================================
+   STATUS DROPDOWN
+===================================================== */
+
+td select {
+
+    background: #eff6ff;
+
+    border: 2px solid #93c5fd;
+
+    font-weight: bold;
+
+    color: #1d4ed8;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+
+td button {
+
+    border: none;
+
+    padding: 7px 12px;
+
+    margin: 3px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    font-size: 12px;
+
+    background: #2563eb;
+
+    color: white;
+
+    transition: 0.2s;
+}
+
+
+td button:hover {
+
+    transform: translateY(-1px);
+
+    opacity: 0.9;
+}
+
+
+/* Edit */
+
+td button:first-child {
+
+    background: #2563eb;
+}
+
+
+/* Delete */
+
+td button:nth-child(2) {
+
+    background: #ef4444;
+}
+
+
+/* =====================================================
+   READ ONLY
+===================================================== */
+
+td span {
+
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    background: #e0f2fe;
+
+    color: #0369a1;
+
+    border-radius: 15px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    header {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+
+        padding: 20px;
+    }
+
+    header h1 {
+
+        font-size: 20px;
+    }
+
+    main {
+
+        width: 92%;
+
+        margin: 20px auto;
+    }
+
+    .form-container {
+
+        margin: 30px auto;
+
+        padding: 25px;
+    }
+
+    .request-form {
+
+        padding: 20px;
+    }
 }
