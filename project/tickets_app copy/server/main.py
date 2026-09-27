@@ -10,6 +10,7 @@ import jwt
 
 from datetime import datetime, timedelta, timezone
 from fastapi.middleware.cors import CORSMiddleware
+import os
 
 
 # =========================================================
@@ -41,9 +42,9 @@ app.add_middleware(
 # MONGODB
 # =========================================================
 
-URL = "mongodb://127.0.0.1:27017"
+MONGODB_URL = os.getenv("MONGODB_URL")
 
-client = MongoClient(URL)
+client = MongoClient(MONGODB_URL)
 
 db = client["hospital_support"]
 
@@ -58,7 +59,7 @@ request_collection = db["support_requests"]
 
 password_hash = PasswordHash.recommended()
 
-SECRET_KEY = "hospital-secret-key"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 oauth2_scheme = OAuth2PasswordBearer(
     tokenUrl="login"
