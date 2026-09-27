@@ -167,7 +167,8 @@ class StaffUpdate(BaseModel):
 
     status: str
 
-
+class StatusUpdate(BaseModel):
+    status: str
 # =========================================================
 # REQUEST RESPONSE HELPER
 # =========================================================
@@ -792,7 +793,55 @@ def staff_update_request(
         "message": "Department staff updated the request successfully"
     }
 
+@app.put("/requests/{id}/status")
+def update_request_status(
+    id: str,
+    request: StatusUpdate,
+    current_user=Depends(
+        require_roles(
+            PATIENT,
+            NURSE,
+            DOCTOR,
+            DEPARTMENT_STAFF,
+            ADMIN
+        )
+    )
+):
 
+    object_id = get_object_id(id)
+
+    allowed_statuses = {
+        "Open",
+        "In Progress",
+        "On Hold",
+        "Resolved",
+        "Closed"
+    }
+
+    if request.status not in allowed_statuses:
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid status"
+        )
+
+    result = request_collection.update_one(
+        {"_id": object_id},
+        {
+            "$set": {
+                "status": request.status
+            }
+        }
+    )
+
+    if result.matched_count == 0:
+        raise HTTPException(
+            status_code=404,
+            detail="Request not found"
+        )
+
+    return {
+        "message": "Request status updated successfully"
+    }
 # =========================================================
 # DELETE REQUEST
 # =========================================================
